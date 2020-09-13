@@ -1,0 +1,31 @@
+.home-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  object-fit: contain;
+}
+.home-container > * {
+  flex: 1;
+}
+
+.home-container > * {
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
+}
+
+@media screen and (max-width: 960px) {
+  .home-container > h1 {
+    font-size: 70px;
+    margin-top: -150 px;
+  }
+}
+
+@media screen and (max-width: 786 px) {
+  .home-container > h1 {
+    font-size: 50px;
+    margin-top: -100 px;
+  }
+}

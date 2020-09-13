@@ -1,0 +1,11 @@
+.color-container {
+  display: inline;
+  align-items: center;
+  margin: 20%;
+}
+
+.color-container > h1 {
+  margin-top: 20px;
+  color: #00326c;
+  font-size: medium;
+}

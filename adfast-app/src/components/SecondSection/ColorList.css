@@ -1,0 +1,18 @@
+.rectangle {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  background-color: green;
+}
+.grid-Container {
+  display: flex;
+  align-items: center;
+}
+.grid-Container > div {
+  align-items: center;
+}
+.block-color {
+  float: left;
+  width: 100px;
+  text-align: center;
+}
