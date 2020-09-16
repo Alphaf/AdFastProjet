@@ -6,7 +6,6 @@ function ThirdSection() {
   return (
     <div>
       <LoginSection></LoginSection>
-      <QuantiyChoice></QuantiyChoice>
     </div>
   );
 }

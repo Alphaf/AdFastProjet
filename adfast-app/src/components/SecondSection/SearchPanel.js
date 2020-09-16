@@ -4,7 +4,7 @@ import "./SearchPanel.css";
 
 function SearchPanel() {
   return (
-    <div className="search-container">
+    <div>
       <h1>What brand of panel are you using</h1>
       <DropdownSection></DropdownSection>
     </div>

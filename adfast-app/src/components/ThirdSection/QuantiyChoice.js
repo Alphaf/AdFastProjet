@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./QuantityChoice.css";
 import adSealFoil from "../../images/Adseal-DWS-4580-Foil.jpg";
 import adSealCtg from "../../images/adseal-dws-ctg.jpg";
 
-function QuantiyChoice() {
-  var radio_props = [
-    { label: "param1", value: 0 },
-    { label: "param2", value: 1 },
-  ];
-  const [selectedOption, setSelectedOption] = useState("option1");
+function QuantiyChoice(props) {
+  const [selectedOption, setSelectedOption] = useState();
+  const [isNamePresent, setIsNamePresent] = useState(false);
+  useEffect(() => {
+    setIsNamePresent(props.isNamePresent);
+  });
   const handleOptionChange = (value) => {
     setSelectedOption(value.target.value);
   };
@@ -46,8 +46,16 @@ function QuantiyChoice() {
           </label>
         </div>
       </form>
-      <div>
-        <button type="submit" className="btn btn-primary btn-block">
+      <div className="btn-qty">
+        <button
+          type="submit"
+          className={
+            isNamePresent
+              ? "btn btn-primary btn-block"
+              : "btn btn-secondary btn-block"
+          }
+          disabled={!isNamePresent}
+        >
           Find the sealant for your panel
         </button>
       </div>
