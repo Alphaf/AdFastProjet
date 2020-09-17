@@ -4,8 +4,6 @@ import adSealFoil from "../../images/Adseal-DWS-4580-Foil.jpg";
 import adSealCtg from "../../images/adseal-dws-ctg.jpg";
 import { Link } from "react-router-dom";
 import fire from "../Firebase/firebase";
-import data from "../../data/Adfast 4580.json";
-
 function QuantiyChoice(props) {
   const [selectedOption, setSelectedOption] = useState();
   const [isNamePresent, setIsNamePresent] = useState(false);

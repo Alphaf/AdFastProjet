@@ -1,7 +1,6 @@
 import React from "react";
 import FormInput from "./FormInput";
 import "./LoginSection.css";
-import QuantiyChoice from "./QuantiyChoice";
 function LoginSection(props) {
   return (
     <div className="order-container">

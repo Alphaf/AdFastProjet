@@ -11,7 +11,6 @@ function ColorList(props) {
   });
 
   const handleClick = (tag) => {
-    //alert(JSON.stringify(tag));
     setSelectedCol(tag.tag_nuancier_coul);
   };
 
