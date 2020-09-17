@@ -3,7 +3,7 @@ import SearchPanel from "./SearchPanel";
 import "./SecondSection.css";
 function SecondSection() {
   return (
-    <div className="section-container">
+    <div >
       <SearchPanel></SearchPanel>
     </div>
   );

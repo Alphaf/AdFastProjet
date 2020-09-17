@@ -4,7 +4,6 @@ import Select from "react-select";
 import AvailableColors from "./AvailableColors";
 import "./DropdownSection.css";
 function DropdownSection() {
-  //alert(JSON.stringify(data.ColorWrapper))
   const colorsName = [];
   const defaultOption = "Pick the brand";
   data.ColorWrapper.map((value) => {

@@ -1,17 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./QuantityChoice.css";
 import adSealFoil from "../../images/Adseal-DWS-4580-Foil.jpg";
 import adSealCtg from "../../images/adseal-dws-ctg.jpg";
+import { Link } from "react-router-dom";
+import fire from "../Firebase/firebase";
+function QuantiyChoice(props) {
+  const [selectedOption, setSelectedOption] = useState();
+  const [isNamePresent, setIsNamePresent] = useState(false);
+  const [dbUserRef, setdbUserRef] = useState();
+  const [selectedCol, setSelectedCol] = useState();
 
-function QuantiyChoice() {
-  var radio_props = [
-    { label: "param1", value: 0 },
-    { label: "param2", value: 1 },
-  ];
-  const [selectedOption, setSelectedOption] = useState("option1");
+  useEffect(() => {
+    setIsNamePresent(props.isNamePresent);
+    setdbUserRef(props.dbUserRef);
+    setSelectedCol(props.selectedCol);
+  });
   const handleOptionChange = (value) => {
     setSelectedOption(value.target.value);
   };
+  const onAddBtnClicked = () => {
+    fire.database().ref(dbUserRef).push(selectedCol);
+  };
+
   return (
     <>
       <div className="row">
@@ -46,10 +56,21 @@ function QuantiyChoice() {
           </label>
         </div>
       </form>
-      <div>
-        <button type="submit" className="btn btn-primary btn-block">
-          Find the sealant for your panel
-        </button>
+      <div className="btn-qty">
+        <Link to={{ pathname: "/log-in", query: { the: "query" } }}>
+          <button
+            type="submit"
+            className={
+              isNamePresent
+                ? "btn btn-primary btn-block"
+                : "btn btn-secondary btn-block"
+            }
+            disabled={!isNamePresent}
+            onClick={onAddBtnClicked}
+          >
+            Find the sealant for your panel
+          </button>
+        </Link>
       </div>
     </>
   );
