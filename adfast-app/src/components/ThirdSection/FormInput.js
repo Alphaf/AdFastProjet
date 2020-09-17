@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import QuantiyChoice from "./QuantiyChoice";
 
-function FormInput() {
+function FormInput(props) {
   const [nameInput, setLastNameInput] = useState();
   const [firstNameInput, setFirstNameInput] = useState();
+  const [dbUserRef, setdbUserRef] = useState();
+  const [selectedCol, setSelectedCol] = useState();
   const [isFirstAndLastNamePresent, setIsFirstAndLastNamePresent] = useState(
     false
   );
@@ -19,6 +21,8 @@ function FormInput() {
   useEffect(() => {
     if (firstNameInput && nameInput) {
       setIsFirstAndLastNamePresent(true);
+      setdbUserRef(nameInput + firstNameInput);
+      setSelectedCol(props.selectedCol);
     }
   });
 
@@ -45,7 +49,12 @@ function FormInput() {
           />
         </div>
       </form>
-      <QuantiyChoice isNamePresent={isFirstAndLastNamePresent}></QuantiyChoice>
+
+      <QuantiyChoice
+        isNamePresent={isFirstAndLastNamePresent}
+        dbUserRef={dbUserRef}
+        selectedCol={selectedCol}
+      ></QuantiyChoice>
     </>
   );
 }

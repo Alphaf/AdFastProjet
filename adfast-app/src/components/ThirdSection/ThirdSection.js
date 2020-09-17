@@ -2,10 +2,10 @@ import React from "react";
 import LoginSection from "./LoginSection";
 import QuantiyChoice from "./QuantiyChoice";
 
-function ThirdSection() {
+function ThirdSection(props) {
   return (
     <div>
-      <LoginSection></LoginSection>
+      <LoginSection selectedCol={props.selectedCol}></LoginSection>
     </div>
   );
 }

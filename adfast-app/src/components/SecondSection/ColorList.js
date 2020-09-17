@@ -41,7 +41,7 @@ function ColorList(props) {
             );
           })}
       </div>
-      <ThirdSection></ThirdSection>
+      <ThirdSection selectedCol={selectedCol}></ThirdSection>
     </>
   );
 }
